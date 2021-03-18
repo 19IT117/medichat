@@ -36,16 +36,16 @@ class _LoginScreenState extends State<LoginScreen> {
                           style:
                           GoogleFonts.openSans(color: Colors.white, fontSize: 28),
                         ),
-                        SizedBox(height: 20),
-                        Text(
+                        SizedBox(height: 50),
+                        /*Text(
                           'Enter your email and password below to continue to the MediChat and stay fit and healthy!!',
                           textAlign: TextAlign.center,
                           style:
                           GoogleFonts.openSans(color: Colors.white, fontSize: 14),
-                        ),
-                        SizedBox(
+                        ),*/
+                        /*SizedBox(
                           height: 50,
-                        ),
+                        ),*/
                         buildTextField("Email",Icons.account_circle),
                         SizedBox(height: 30),
                         buildTextField("Password",Icons.lock),
@@ -85,6 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                             final User user =
                             (await firebaseAuth.signInWithCredential(credential)).user;
+
                           },
                           color: Colors.blue,
                           child: Row(
@@ -98,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           textColor: Colors.white,
                         ),
-                        SizedBox(height: 100),
+
                       ],
                     ),
                 ),
@@ -109,7 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
   buildTextField(String labelText,IconData icon){
     return Container(
       decoration: BoxDecoration(
-          color: secondaryColor,
+          color: Colors.blueGrey,
           border: Border.all(color: Colors.blue)),
       child: TextField(
         decoration: InputDecoration(

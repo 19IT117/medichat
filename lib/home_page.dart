@@ -29,7 +29,7 @@ class _home_pageState extends State<home_page> {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Container(
-                  width: 160.0,
+                  width : 160.0,
                   child: new Image.asset('images/chatbot.png'),
                 ),
               ),
