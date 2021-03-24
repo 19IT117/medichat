@@ -21,7 +21,7 @@ class _BMIState extends State<BMI> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: primaryColor,
+        backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: secondaryColor,
           title: Center(child: Text('BMI')),
