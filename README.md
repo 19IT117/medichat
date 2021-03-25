@@ -1,4 +1,4 @@
-# medichat
+# Medichat
 
 A new Flutter application.
 
