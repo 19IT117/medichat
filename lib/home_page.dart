@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medichat/BMI.dart';
 import 'package:medichat/ChatBot.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 class home_page extends StatefulWidget {
   @override
   _home_pageState createState() => _home_pageState();

@@ -33,6 +33,7 @@ dependencies:
   font_awesome_flutter:
   google_fonts:
   flutter_dialogflow: ^0.1.3
+  carousel_slider: ^3.0.0
 
 dev_dependencies:
   flutter_test:
