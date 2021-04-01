@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "medicalbot-dexe",
+  "private_key_id": "69fe9e55151dbe2af2769bf9cbf8c138d0e6a90a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC6lhKAIXQToTgg\nFggnSLyfNogkvZXe+Cp6h4PB+yb1in6p4Y2s6pTVFy4Czt070oCGIz3U+D0Y30L/\nb/Gdxlp76EiA7vDGja+zcECRzE9UpF/teDOFuWpo89GfgEf1UNBx/G0ltsrwsF7f\nhGQscn9iJddTqxAXVpWvOvPLwiLtZBTa8DaJ+luaSGzbo0Vh+vReQn4NMZ5m+BxN\nOrIGhlTnEM3/12U8NulqG5RJzqiSKmaSNTrltlFSgORHoAJmDgedOqwYJRws79c0\npMp1x4cTM/q7V9luqZjk0oeEV8RABQyOCN5Set8nNVT9rSl7nAOWneu/FLXWG0a0\n/dVKyWybAgMBAAECggEAMuXcPxqhFPe+HTaVW84CMjZIdilHWE7/G3SbEw/lZUa1\n3babFKfbGLPdh8ORYw+9opm7dLyQwhepKZAKa30f0rwfBxjnEmq1GrBM1NjUbST3\nzAoll91n8yBLtwRh3MACVI3E4mxWOMkL4FI3l05WhFoJPpgj6BHk/CuLNLKNH49c\nYst0GJfo2VgdCdURyMQgizs05AKrlJXwYNk7GUsVy61qbrdk+yUvGMYvpeSBUktM\n4Dv0LxRmylitW5mH7k3qypW7ufw6/UEhtSIWAZZgjzGMeX3W3rVNPnqMNCv9n0Jw\n9T7gZRQ5Ly8VfxbxV+z0S3mB5BAno45aXwgaJek9hQKBgQD+wKLxki3OrTJ/tn+n\nJr6SQON+j1DHE9wrlVnuLeyR8JENHbqH1tsWufNwv7KskAu8S4xjvq2NFzc9hPWg\nF3OHRV6/a8dm3jRrvyuFImZG/vAX0Bu1vv1I/lpyJa6dMwVVEeZ43tWdaqdOtrg1\nHNAP2fjQbsJ1dwm8OHj3y8VYLwKBgQC7f/siIKVUaO4ODW5t+CKYo5B4gudTnaK3\ntSCGLZXUXVyEsEhi+85Vf7sS+kfBr+bQ43ZhCxaSkxbZdIvRd0Qz03OsPSGlDDrU\nYexT0JJB3jxJk3joLEfLu5lUxi6bktRlh91SxblmmpeCO6NVWFO8Oknil67IROvA\nm/j5RrDrVQKBgQCJGpXXWyvKCo6eC1MiW4i+36tP5sO7kKWy0xtmQ1MJrCX0oCZO\ni0S4M3WgHZuEobWfLi2tVObEg1UYh+FFurlTePMoJFJZu4cM4gMDEONonDYNKtRu\n+Q4J5dI5kqwqMFZTVWHrdUoUAV1v0IjNFOepUE9HpgSEAX+8y8vW2NUpwwKBgByj\nbZ5G0jnUVRf8YTOWxOH/iZ9+jwqsdyAMIE2eRNZM9EaoDkZgI6HXgqFhbPhef6jE\nNV6ZLPdyU/ke3gQ+bUJlN7PFGpB1D79Eva4Hm29IHHk4dy0vJkAuBTt3kcLdaGeh\nmuJ7pNfRIPcZWNc+SHvlg0eC14VrUX73081vSLKJAoGBAIJ4clxEEHOl5CwOFD0X\n5M2S4rH4+fxUe4MedXs2OmqrYfMBIBcQ9Iw9koIokRZRrNPNSuIUt1oXxJDULCbY\nSM4JJnEl50Y7TBKrh+DJrAydYHHrLMKcWI4aGydUZ8sxpb79YLaMnL0oJ2mhRWf8\nC7P9ut/EgZzJfHKgk/8xlBpC\n-----END PRIVATE KEY-----\n",
+  "client_email": "medichat@medicalbot-dexe.iam.gserviceaccount.com",
+  "client_id": "117017637107634726382",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/medichat%40medicalbot-dexe.iam.gserviceaccount.com"
+}
