@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "712900821336-8o5nbjq4p5opspbseug4a0a6is86iaqc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.malavks.medichat",
+            "certificate_hash": "a6f52307c02a444d4dcfb169536a55b6b6246509"
+          }
+        },
+        {
           "client_id": "712900821336-ltt4ilt0kchel4jii3v0muc2io7t9p2f.apps.googleusercontent.com",
           "client_type": 3
         }

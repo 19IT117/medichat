@@ -1,85 +1,195 @@
+import 'package:bubble/bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
+import 'package:intl/intl.dart';
 class chatbot extends StatefulWidget {
+  chatbot({Key key, this.title}) : super(key: key);
+  final String title;
   @override
   _chatbotState createState() => _chatbotState();
 }
 
 class _chatbotState extends State<chatbot> {
-  void response(query)async{
-    AuthGoogle authGoogle=await AuthGoogle(
-      fileJson: "images/medicalbot-dexe-69fe9e55151d.json"
-    ).build();
-    Dialogflow dialogflow= Dialogflow(authGoogle: authGoogle,language: Language.english);
-    AIResponse aiResponse= await dialogflow.detectIntent(query);
+  void response(query) async {
+    AuthGoogle authGoogle = await AuthGoogle(
+        fileJson: "images/medicalbot-dexe-69fe9e55151d.json")
+        .build();
+    Dialogflow dialogflow =
+    Dialogflow(authGoogle: authGoogle, language: Language.english);
+    AIResponse aiResponse = await dialogflow.detectIntent(query);
     setState(() {
-      messages.insert(0,{"data":0,"message":aiResponse.getListMessage()[0]["text"]["text"][0].toString()});
+      messsages.insert(0, {
+        "data": 0,
+        "message": aiResponse.getListMessage()[0]["text"]["text"][0].toString()
+      });
     });
+
+
+    print(aiResponse.getListMessage()[0]["text"]["text"][0].toString());
   }
-  final messageInsert=TextEditingController();
-  List<Map> messages=List();
-  Color secondaryColor = Color(0xff232c51);
+
+  final messageInsert = TextEditingController();
+  List<Map> messsages = List();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: secondaryColor,
-        title:Center(
-          child: Text(
-            'Dr.X',
-          ),
-        )
+        title: Text(
+          "Chat bot",
+        ),
       ),
       body: Container(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            Container(
+              padding: EdgeInsets.only(top: 15, bottom: 10),
+              child: Text("Today, ${DateFormat("Hm").format(DateTime.now())}", style: TextStyle(
+                  fontSize: 20
+              ),),
+            ),
             Flexible(
                 child: ListView.builder(
-                  reverse: true,
-                  padding: EdgeInsets.all(10.0),
-                  itemCount: messages.length,
-                    itemBuilder: (context,index)=>messages[index]["data"]==0?
-                    Text(messages[index]["message"].toString()):
-                    Text(messages[index]["message"].toString(),textAlign: TextAlign.right,)
-                )),
+                    reverse: true,
+                    itemCount: messsages.length,
+                    itemBuilder: (context, index) => chat(
+                        messsages[index]["message"].toString(),
+                        messsages[index]["data"]))),
+            SizedBox(
+              height: 20,
+            ),
+
             Divider(
-              height: 3.0,
+              height: 5.0,
+              color: Colors.greenAccent,
             ),
             Container(
-              padding: EdgeInsets.only(bottom: 20.0),
-              margin: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: Row(
-                children: <Widget>[
-                  Flexible(child: TextField(
+              child: ListTile(
+                title: Container(
+                  height: 35,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(
+                        15)),
+                    color: Color.fromRGBO(220, 220, 220, 1),
+                  ),
+                  padding: EdgeInsets.only(left: 15),
+                  child: TextFormField(
                     controller: messageInsert,
-                    decoration: InputDecoration.collapsed(hintText: 'Type your message'),
-                  )),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 4.0),
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.send
+                    decoration: InputDecoration(
+                      hintText: "Enter a Message",
+                      hintStyle: TextStyle(
+                          color: Colors.black26
                       ),
-                      onPressed: (){
-                        if(messageInsert.text.isEmpty)
-                          {
-                            print('Empty mesaage');
-                          }else{
-                          setState(() {
-                            messages.insert(0,{"data":1,"message":messageInsert.text});
-                          });
-                          response(messageInsert.text);
-                          messageInsert.clear();
-                        }
-                      },
+                      border: InputBorder.none,
+                      focusedBorder: InputBorder.none,
+                      enabledBorder: InputBorder.none,
+                      errorBorder: InputBorder.none,
+                      disabledBorder: InputBorder.none,
                     ),
-                  )
-                ],
+
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.black
+                    ),
+                    onChanged: (value) {
+
+                    },
+                  ),
+                ),
+
+                trailing: IconButton(
+
+                    icon: Icon(
+
+                      Icons.send,
+                      size: 30.0,
+                      color: Colors.greenAccent,
+                    ),
+                    onPressed: () {
+
+                      if (messageInsert.text.isEmpty) {
+                        print("empty message");
+                      } else {
+                        setState(() {
+                          messsages.insert(0,
+                              {"data": 1, "message": messageInsert.text});
+                        });
+                        response(messageInsert.text);
+                        messageInsert.clear();
+                      }
+                      FocusScopeNode currentFocus = FocusScope.of(context);
+                      if (!currentFocus.hasPrimaryFocus) {
+                        currentFocus.unfocus();
+                      }
+                    }),
+
               ),
+
+            ),
+
+            SizedBox(
+              height: 15.0,
             )
           ],
         ),
+      ),
+    );
+  }
+  Widget chat(String message, int data) {
+    return Container(
+      padding: EdgeInsets.only(left: 20, right: 20),
+
+      child: Row(
+        mainAxisAlignment: data == 1 ? MainAxisAlignment.end : MainAxisAlignment.start,
+        children: [
+
+          data == 0 ? Container(
+            height: 60,
+            width: 60,
+            child: CircleAvatar(
+              backgroundImage: AssetImage("images/robot.jpg"),
+            ),
+          ) : Container(),
+
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Bubble(
+                radius: Radius.circular(15.0),
+                color: data == 0 ? Color.fromRGBO(23, 157, 139, 1) : Colors.orangeAccent,
+                elevation: 0.0,
+
+                child: Padding(
+                  padding: EdgeInsets.all(2.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Flexible(
+                          child: Container(
+                            constraints: BoxConstraints( maxWidth: 200),
+                            child: Text(
+                              message,
+                              style: TextStyle(
+                                  color: Colors.white, fontWeight: FontWeight.bold),
+                            ),
+                          ))
+                    ],
+                  ),
+                )),
+          ),
+
+
+          data == 1? Container(
+            height: 60,
+            width: 60,
+            child: CircleAvatar(
+              backgroundImage: AssetImage("images/default.jpg"),
+            ),
+          ) : Container(),
+
+        ],
       ),
     );
   }
