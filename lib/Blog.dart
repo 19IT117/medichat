@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medichat/Home_blog.dart';
 
 class blog extends StatefulWidget {
   @override
@@ -8,25 +9,8 @@ class blog extends StatefulWidget {
 class _blogState extends State<blog> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-            'Blog'
-        ),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Center(
-            child: Text(
-              'Blog',
-              style: TextStyle(
-                fontSize: 20,
-              ),
-            ),
-          )
-        ],
-      ),
+    return MaterialApp(
+      home: Home(),
     );
   }
 }

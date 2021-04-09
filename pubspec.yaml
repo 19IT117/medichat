@@ -33,6 +33,7 @@ dependencies:
   bottom_navy_bar: 5.6.0
   bubble:
   intl:
+  http: 0.12.2
   font_awesome_flutter:
   google_fonts:
   flutter_dialogflow: ^0.1.3
