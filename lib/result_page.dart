@@ -44,9 +44,12 @@ class ResultPage extends StatelessWidget {
                         style: kBMITextStyle,
                       ),
                       Center(
-                        child: Text(
-                          interpretation,
-                          style: kInterpretation,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Text(
+                            interpretation,
+                            style: kInterpretation,
+                          ),
                         ),
                       )
                     ],

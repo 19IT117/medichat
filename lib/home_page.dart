@@ -5,6 +5,8 @@ import 'package:medichat/ChatBot.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:provider/provider.dart';
+import 'package:medichat/mcq.dart';
+import 'input_page.dart';
 class home_page extends StatefulWidget {
   @override
   _home_pageState createState() => _home_pageState();
@@ -71,7 +73,7 @@ class _home_pageState extends State<home_page> {
                 child: FlatButton(
                   onPressed: (){
 
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>BMI()));
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>InputPage()));
                   },
                     child: Container(
                       width: 170.0,
@@ -87,6 +89,11 @@ class _home_pageState extends State<home_page> {
                 ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
+                child: FlatButton(
+                  onPressed: (){
+
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Quizzler()));
+                  },
                 child: Container(
                   width: 170.0,
                   child: new Image.asset('images/hra.png'),
@@ -98,7 +105,7 @@ class _home_pageState extends State<home_page> {
                   ),
                 ),
               ),
-            ],
+              )],
           ),
         ),
       ),

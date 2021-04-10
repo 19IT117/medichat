@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 //import 'package:flutter_html_view/flutter_html_view.dart';
 
 class PostPage extends StatefulWidget {
@@ -19,9 +19,9 @@ class _PostPageState extends State<PostPage> {
       },
       scrollable: false,
     );
-  }
+  }*/
 
-  @override
+ /* @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -51,4 +51,4 @@ class _PostPageState extends State<PostPage> {
       ),
     );
   }
-}
+}*/

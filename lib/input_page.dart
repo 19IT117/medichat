@@ -1,4 +1,4 @@
-
+import 'main.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Gender_Card.dart';
@@ -25,6 +25,7 @@ class _InputPageState extends State<InputPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor:Color(0XFF0A0E21) ,
         appBar: AppBar(
           title: Text('BMI CALCULATOR'),
         ),
@@ -43,6 +44,7 @@ class _InputPageState extends State<InputPage> {
                     childWidget: GenderCard(
                       text: "MALE",
                       icon: FontAwesomeIcons.mars,
+
                     ),
                     onPress: () {
                       setState(() {
@@ -132,7 +134,7 @@ class _InputPageState extends State<InputPage> {
                       crossAxisAlignment: CrossAxisAlignment.baseline,
                       children: <Widget>[
                         Text(
-                          height.toString(),
+                        weight.toString(),
                           style: kHeavyTextLable,
                         ),
                         Text(
@@ -153,12 +155,12 @@ class _InputPageState extends State<InputPage> {
                         RoundSliderOverlayShape(overlayRadius: 30),
                       ),
                       child: Slider(
-                        value: height.toDouble(),
+                        value: weight.toDouble(),
                         min: 40,
                         max: 140,
                         onChanged: (double updateValue) {
                           setState(() {
-                            height = updateValue.round();
+                            weight = updateValue.round();
                           });
                         },
                       ),

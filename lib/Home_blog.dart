@@ -64,14 +64,14 @@ class _PostTileState extends State<PostTile> {
     return GestureDetector(
       onTap: () {
         if (imageUrl != "") {
-          Navigator.push(
+          /*Navigator.push(
               context,
               MaterialPageRoute(
                   builder: (context) => PostPage(
                     title: widget.title,
                     imageUrl: imageUrl,
                     desc: widget.desc,
-                  )));
+                  )));*/
         }
       },
       child: Container(
