@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:medichat/BMI.dart';
 import 'package:medichat/ChatBot.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -43,69 +45,162 @@ class _home_pageState extends State<home_page> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: Center(child: Text(title)),
+          backgroundColor: Colors.black,
         ),
         body: Container(
-          margin: EdgeInsets.symmetric(vertical: 20.0),
-          height: 200.0,
-          child: ListView(
-            scrollDirection: Axis.horizontal,
+          color :Colors.grey.shade500,
+          child: Column(
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: FlatButton(
-                  onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>chatbot()));
-                  },
-                  child: Container(
-                    width : 170.0,
-                    child: new Image.asset('images/chatbot.png'),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.black,
-                        style: BorderStyle.solid,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: FlatButton(
-                  onPressed: (){
-
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>InputPage()));
-                  },
-                    child: Container(
-                      width: 170.0,
-                      child: new Image.asset('images/bmi.png'),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black,
-                            style: BorderStyle.solid,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: FlatButton(
-                  onPressed: (){
-
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Quizzler()));
-                  },
+              //BMI
+              Expanded(child: GestureDetector(
+                onTap: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>InputPage()));
+                },
                 child: Container(
-                  width: 170.0,
-                  child: new Image.asset('images/hra.png'),
+                  margin: EdgeInsets.all(20),
+                  padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.black,
-                      style: BorderStyle.solid,
-                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    color: Colors.grey.shade400,
+                  ),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Icon(FontAwesomeIcons.calculator,size: 102,)
+                      ),
+                      Expanded(
+                          flex: 4,
+                          child:Column(
+                            children: <Widget>[
+                              Expanded(
+                                flex:7,
+                                child: Text('BMI',style: TextStyle(fontSize: 24,fontWeight:FontWeight.w200),),
+                              ),
+                              Expanded(
+                                  flex:2,
+                                  child: SizedBox(height: 5,)
+                              ),
+                              Expanded(
+                                flex:5,
+                                child: Text('Last Checked',textAlign: TextAlign.right,style: TextStyle(fontSize: 10,fontWeight:FontWeight.w100),),
+                              )
+                            ],
+                          )
+                      )
+                    ],
                   ),
                 ),
-              ),
-              )],
+              ),),
+              Expanded(child: GestureDetector(
+                onTap: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Quizzler()));
+                },
+                child: Container(
+                  margin: EdgeInsets.all(20),
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    color: Colors.grey.shade400,
+                  ),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Icon(FontAwesomeIcons.listAlt,size: 102,),
+                      ),
+                      Expanded(
+                          flex:4,
+                          child:Column(
+                            children: <Widget>[
+                              Expanded(
+                                flex:7,
+                                child: Text('HRA',style: TextStyle(fontSize: 24,fontWeight:FontWeight.w200),),
+                              ),
+                              Expanded(
+                                  flex:2,
+                                  child: SizedBox(height: 5,)
+                              ),
+                              Expanded(
+                                flex:5,
+                                child: Text('Last Checked',textAlign: TextAlign.right,style: TextStyle(fontSize: 10,fontWeight:FontWeight.w100),),
+                              )
+                            ],
+                          )
+                      )
+                    ],
+                  ),
+                ),
+              ),),
+              Expanded(child: Container(
+                margin: EdgeInsets.all(20),
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  color: Colors.grey.shade400,
+                ),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Icon(Icons.home),
+                    ),
+                    Expanded(
+                        flex:4,
+                        child:Column(
+                          children: <Widget>[
+                            Expanded(
+                              flex:7,
+                              child: Text('Calories Burnt',style: TextStyle(fontSize: 24,fontWeight:FontWeight.w200),),
+                            ),
+                            Expanded(
+                                flex:2,
+                                child: SizedBox(height: 5,)
+                            ),
+                            Expanded(
+                              flex:5,
+                              child: Text('Last Checked',textAlign: TextAlign.right,style: TextStyle(fontSize: 10,fontWeight:FontWeight.w100),),
+                            )
+                          ],
+                        )
+                    )
+                  ],
+                ),
+              ),),
+              Expanded(child: Container(
+                margin: EdgeInsets.all(20),
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  color: Colors.grey.shade400,
+                ),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Icon(Icons.home),
+                    ),
+                    Expanded(
+                        flex:4,
+                        child:Column(
+                          children: <Widget>[
+                            Expanded(
+                              flex:7,
+                              child: Text('Fit Track',style: TextStyle(fontSize: 24,fontWeight:FontWeight.w200),),
+                            ),
+                            Expanded(
+                                flex:2,
+                                child: SizedBox(height: 5,)
+                            ),
+                            Expanded(
+                              flex:5,
+                              child: Text('Last Checked',textAlign: TextAlign.right,style: TextStyle(fontSize: 10,fontWeight:FontWeight.w100),),
+                            )
+                          ],
+                        )
+                    )
+                  ],
+                ),
+              ),),
+              
+
+            ],
           ),
         ),
       ),

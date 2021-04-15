@@ -9,9 +9,9 @@ class Quizzler extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Center(child: Text('HRA Test')),
-          backgroundColor: Colors.blueGrey,
+          backgroundColor: Colors.black,
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.grey.shade400,
         body: SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0),

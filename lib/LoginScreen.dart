@@ -39,10 +39,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       padding: EdgeInsets.all(4.0),
                       child: OutlineButton.icon(
                           onPressed: (){
-                            final provider = Provider.of<GoogleSignInProvider>(
-                                context, listen: false);
-                            provider.login();
-                            //Navigator.push(context,MaterialPageRoute(builder: (context)=>screens()));
+                            //final provider = Provider.of<GoogleSignInProvider>(
+                            //    context, listen: false);
+                            //provider.login();
+                            Navigator.push(context,MaterialPageRoute(builder: (context)=>screens()));
                           },
                           label: Text(
                             'Sign In with Google',

@@ -1,6 +1,6 @@
 import 'Reusable_card.dart';
 import 'package:flutter/material.dart';
-import 'Constants.dart';
+import 'Constant.dart';
 
 
 
@@ -16,7 +16,9 @@ class ResultPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text('BMI CALCULATOR'),
+          backgroundColor: Colors.black,
         ),
+        backgroundColor: Colors.grey.shade400,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.stretch,

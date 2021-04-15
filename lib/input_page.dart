@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Gender_Card.dart';
 import 'Reusable_card.dart';
-import 'Constants.dart';
+import 'Constant.dart';
 import 'result_page.dart';
 import 'BMI_Calculator.dart';
 
@@ -25,9 +25,10 @@ class _InputPageState extends State<InputPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor:Color(0XFF0A0E21) ,
+        backgroundColor:Colors.grey.shade400 ,
         appBar: AppBar(
           title: Text('BMI CALCULATOR'),
+          backgroundColor: Colors.black,
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
