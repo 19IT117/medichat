@@ -5,6 +5,7 @@ import 'package:medichat/Settings.dart';
 import 'package:medichat/Storage.dart';
 import 'ChatBot.dart';
 import 'home_page.dart';
+import 'UserDesk.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
 class screens extends StatefulWidget {
@@ -14,7 +15,7 @@ class screens extends StatefulWidget {
 
 class _screensState extends State<screens> {
   int selectPage=0;
-  List screen=[home_page(),storage(),chatbot(),blog(),settings()];
+  List screen=[home_page(),storage(),chatbot(),blog(),UserDesk()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
